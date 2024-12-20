@@ -1,0 +1,41 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.alexey.shortcuts_helper</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Shortcuts Helper</name>
+
+    <version>1.0</version>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="8424575@gmail.com" url="https://google.com">Alexey Moskovkin</vendor>
+
+    <idea-version since-build="231" until-build="243.*" />
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>Plugin to show available shortcuts in JetBrains IDEs</description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="Shortcuts.Action" class="com.alexey.shortcuts_helper.ShortcutsAction"
+                text="Shortcuts cheatsheet" description="Show shortcuts cheatsheet">
+            <add-to-group group-id="HelpMenu" anchor="last"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta shift S"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control shift S"/>
+        </action>
+
+    </actions>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+</idea-plugin>
